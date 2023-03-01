@@ -1,0 +1,20 @@
+<resources>
+    <string name="app_name">Rick\'n Morty</string>
+    <string name="species_status">%s, %s</string>
+    <string name="general_error">A server error has occurred. Please try again later.</string>
+    <string name="internet_error">Connection lost. Check your signal and try again.</string>
+    <string name="error_tap_to_retry">%s\nPlease tap to try again.</string>
+    <string name="back_button">Back Button</string>
+    <string name="biographical_information">Biographical Information</string>
+    <string name="species">Species</string>
+    <string name="status">Status</string>
+    <string name="gender">Gender</string>
+    <string name="place_of_origin">Place Of Origin</string>
+    <string name="home_planet">Home Planet</string>
+    <string name="meta_information">Meta Information</string>
+    <string name="first_seen_in">First Seen In</string>
+    <string name="total_episode">Total Episode</string>
+    <string name="episode_d">%d Episode(s)</string>
+    <string name="episode">Episode</string>
+    <string name="episode_number">Episode #%d</string>
+</resources>
