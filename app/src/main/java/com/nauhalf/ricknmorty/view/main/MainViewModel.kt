@@ -9,7 +9,6 @@ import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.Job
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
-import kotlinx.coroutines.flow.collect
 import kotlinx.coroutines.flow.onStart
 import kotlinx.coroutines.launch
 import javax.inject.Inject
@@ -23,17 +22,21 @@ class MainViewModel @Inject constructor(private val fetchAllCharacterUseCase: Fe
     private var job: Job? = null
 
     init {
+        // call loadAllCharacter at the first time ViewModel created
         loadAllCharacter()
     }
 
     fun loadAllCharacter() {
+        // cancel any process if there's a Job available
         job?.cancel()
         job = viewModelScope.launch {
+            // run the use case with emitting the Loading at the first flow run
             fetchAllCharacterUseCase.invoke()
                 .onStart {
                     emit(RickMortyResponse.Loading)
                 }
                 .collect {
+                    // set emitted value to _characters StateFlow
                     _characters.value = it
                 }
         }

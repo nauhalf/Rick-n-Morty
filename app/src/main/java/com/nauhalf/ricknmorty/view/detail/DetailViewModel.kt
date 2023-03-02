@@ -21,7 +21,7 @@ import kotlinx.coroutines.flow.stateIn
 
 @HiltViewModel
 class DetailViewModel @Inject constructor(
-    private val savedStateHandle: SavedStateHandle,
+    savedStateHandle: SavedStateHandle,
     private val fetchCharacterUseCase: FetchCharacterUseCase,
     private val fetchEpisodeUseCase: FetchEpisodeUseCase,
 ) : ViewModel() {
@@ -36,11 +36,17 @@ class DetailViewModel @Inject constructor(
 
     private val _biographicalList = MutableStateFlow<List<CharacterDetailUiModel>>(listOf())
     private val _metaList = MutableStateFlow<List<CharacterDetailUiModel>>(listOf())
+
+    // Combine most emitted flow of biographical, meta, and detailFirstEpisode to new List
     val detailList = combine(_biographicalList, _metaList, _detailFirstEpisode) { bio, meta, epi ->
         val list = mutableListOf<CharacterDetailUiModel>()
+        // add separator of Biographical Information
         list.add(CharacterDetailUiModel.Separator(title = R.string.biographical_information))
+        // add all biographical list to new list
         list.addAll(bio)
+        // add separator of Meta Information
         list.add(CharacterDetailUiModel.Separator(title = R.string.meta_information))
+        // if episode state flow is an Success Response add First Seen In to new list
         if (epi is RickMortyResponse.Success) {
             list.add(
                 CharacterDetailUiModel.Information(
@@ -49,6 +55,7 @@ class DetailViewModel @Inject constructor(
                 )
             )
         }
+        // add all meta information to new list
         list.addAll(meta)
         return@combine list
     }.stateIn(viewModelScope, SharingStarted.Eagerly, listOf())
@@ -63,10 +70,12 @@ class DetailViewModel @Inject constructor(
 
     private fun loadCharacter(id: Int) {
         viewModelScope.launch {
+            // run the fetch character use case with emitting the Loading at the first flow run
             fetchCharacterUseCase(id)
                 .onStart {
                     emit(RickMortyResponse.Loading)
                 }.collect {
+                    // set emitted value to _detailCharacter StateFlow
                     _detailCharacter.value = it
                 }
         }
@@ -74,10 +83,12 @@ class DetailViewModel @Inject constructor(
 
     fun loadEpisode(id: Int) {
         viewModelScope.launch {
+            // run the fetch episode use case with emitting the Loading at the first flow run
             fetchEpisodeUseCase(id)
                 .onStart {
                     emit(RickMortyResponse.Loading)
                 }.collect {
+                    // set emitted value to _detailFirstEpisode StateFlow
                     _detailFirstEpisode.value = it
                 }
         }

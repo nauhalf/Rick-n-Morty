@@ -92,6 +92,7 @@ class DetailActivity : BaseActivity<ActivityDetailBinding>() {
 
     private fun handleSuccess(data: Character) {
         with(binding) {
+            // Populate detail character to
             tvError.isVisible = false
             pbDetail.isVisible = false
             scrollDetail.isVisible = true
@@ -102,10 +103,11 @@ class DetailActivity : BaseActivity<ActivityDetailBinding>() {
                 .into(ivCharacter)
 
             tvName.text = data.name
+            // if the detailFirstEpisode is not an Success, call loadEpisode function
             if (viewModel.detailFirstEpisode.value !is RickMortyResponse.Success) {
                 data.episode.firstOrNull()?.id?.let(viewModel::loadEpisode)
             }
-
+            // map character detail to list of biographical and meta information
             val bio = listOf<CharacterDetailUiModel>(
                 CharacterDetailUiModel.Information(
                     title = R.string.species,
@@ -137,6 +139,7 @@ class DetailActivity : BaseActivity<ActivityDetailBinding>() {
                 ),
             )
 
+            // if episode list is not empty, add another item to show list of Episode
             if (data.episode.isNotEmpty()) {
                 meta.add(
                     CharacterDetailUiModel.Information(
