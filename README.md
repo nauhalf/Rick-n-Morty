@@ -1,5 +1,5 @@
 # Rick-n-Morty
-![Rick & Morty](/docs/banner.webp)
+![Rick & Morty](/docs/banner.png)
 
 This is a repository of app for showing the first page of Rick & Morty character (20 items). Thanks to [The Rick and Morty API](https://rickandmortyapi.com/) for providing the API
 
