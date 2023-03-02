@@ -30,7 +30,6 @@ class FakeEpisodeRepositoryImpl(
             emit(
                 HttpError(
                     message = "Episode not found",
-                    messageTitle = "Episode not found",
                     code = 404,
                     data = null
                 )

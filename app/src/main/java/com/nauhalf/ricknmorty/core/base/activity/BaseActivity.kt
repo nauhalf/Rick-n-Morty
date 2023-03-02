@@ -12,7 +12,9 @@ abstract class BaseActivity<T : ViewBinding> : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        // Set the binding variable from onViewBindingInflate function
         binding = onViewBindingInflate(layoutInflater)
+        //set content view from root view of the ViewBinding
         setContentView(binding.root)
     }
 }

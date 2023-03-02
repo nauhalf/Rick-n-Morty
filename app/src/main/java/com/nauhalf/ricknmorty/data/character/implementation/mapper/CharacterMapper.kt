@@ -2,7 +2,7 @@ package com.nauhalf.ricknmorty.data.character.implementation.mapper
 
 import com.nauhalf.ricknmorty.data.character.implementation.remote.response.CharacterResponse
 import com.nauhalf.ricknmorty.data.character.api.model.Character
-
+/** Extension function to map CharacterResponse data class to Character data class **/
 fun CharacterResponse.toCharacter(): Character {
     return Character(
         id = id ?: 0,

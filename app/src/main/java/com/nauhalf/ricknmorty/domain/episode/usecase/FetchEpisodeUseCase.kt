@@ -6,5 +6,6 @@ import javax.inject.Inject
 class FetchEpisodeUseCase @Inject constructor(
     private val episodeRepository: EpisodeRepository,
 ) {
+    /** Run the UseCase by using EpisodeRepository.fetchEpisode(:id) **/
     operator fun invoke(id: Int) = episodeRepository.fetchEpisode(id)
 }

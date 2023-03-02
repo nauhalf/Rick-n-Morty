@@ -17,10 +17,14 @@ class EpisodeRepositoryImpl(
 ) : EpisodeRepository {
     override fun fetchEpisode(id: Int): Flow<RickMortyResponse<Episode>> = flow {
         try {
+            // call API fetchEpisode of id episode
             val data = episodeApiService.fetchEpisode(id = id)
+            // emit the result to success with mapped response to Episode data class
             emit(RickMortyResponse.Success(data = data.toEpisode()))
         } catch (e: Exception) {
+            // when it throw an error, catch the exception and emit mapped Error from the exception
             emit(e.toError())
         }
+        // run the process on Dispatcher.IO
     }.flowOn(ioDispatcher)
 }

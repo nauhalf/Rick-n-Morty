@@ -5,7 +5,7 @@ import android.view.View
 import androidx.recyclerview.widget.RecyclerView
 import androidx.recyclerview.widget.RecyclerView.ItemDecoration
 
-
+/** ItemDecoration for add gap / space between item on RecyclerView with GridLayoutManager **/
 class GridSpacingItemDecoration(
     private val spanCount: Int,
     private val spacing: Int,
