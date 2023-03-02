@@ -6,7 +6,7 @@ This is a repository of app for showing the first page of Rick & Morty character
 
 # Features
 **Rick'n Morty** is a List-Detail app that contains 2 screen, List Character & Detail Character. Users can view 20 characters and open the detail by choose one of them. It will display the detailed information of the selected character like species, status, gender, etc. The application will run like the diagram below.
-![Flowchart](/docs/flowchart.png)
+![Flowchart](/docs/flowchart.jpg)
 
 
 
