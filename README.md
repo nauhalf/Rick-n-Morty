@@ -24,5 +24,12 @@ This is a repository of app for showing the first page of Rick & Morty character
 ## Architecture
 **Rick'n Morty** is based on the Model View ViewModel architecture and Clean Architecture, which follows the [Guide to app architecture](https://developer.android.com/topic/architecture#modern-app-architecture).
 ![Typical App Architecture](https://developer.android.com/static/topic/libraries/architecture/images/mad-arch-overview.png)
+
 The architecture of **Rick'n Morty** is composed by two layers, the *UI Layer* and *Data Layer*. But it also can be added with additional layer called *Domain Layer* to simplify and reuse the interactions between the UI and Data Layers. 
 ![Architecture Overview](/docs/architecture_overview.png)
+
+### Additional Information
+This project created with:
+- Android Studio Electric Eel
+- AGP Version 7.4.0
+- Gradle Version 7.5
