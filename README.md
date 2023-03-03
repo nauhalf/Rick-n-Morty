@@ -10,7 +10,7 @@ This is a repository of Take-Home Exams app from GetGo.sg Android Dev Assignment
 
 
 ## Design Inspiration
-For the UI Design, I inspired by [Jakes Trevor's Rick and Morty App](https://www.behance.net/gallery/146439915/Rick-and-Morty-App?tracking_source=search_projects%7CMorty) and the detail character from [Rick and Morty Wiki Fandom Character Page](https://rickandmorty.fandom.com/wiki/Rick_Sanchez)
+For the UI Design, the list page I was inspired by [Jakes Trevor's Rick and Morty App](https://www.behance.net/gallery/146439915/Rick-and-Morty-App?tracking_source=search_projects%7CMorty) and the detail character from [Rick and Morty Wiki Fandom Character Page](https://rickandmorty.fandom.com/wiki/Rick_Sanchez)
 ![Jakes Trevor Design](https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/3e2f46146439915.62b0a941065ce.jpg) 
 ![Wiki Fandom Character](/docs/wiki-character-detail.png)
 
