@@ -1,7 +1,7 @@
 # Rick-n-Morty
 ![Rick & Morty](/docs/banner.png)
 
-This is a repository of Take-Home Exams app from GetGo.sg Android Dev Assignment for showing the first page of Rick & Morty character (20 items). Thanks to [The Rick and Morty API](https://rickandmortyapi.com/) for providing the API
+This is an App for showing the first page of Rick & Morty character (20 items). Thanks to [The Rick and Morty API](https://rickandmortyapi.com/) for providing the API
 
 
 # Features
