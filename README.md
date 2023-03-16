@@ -45,6 +45,8 @@ This project created with:
 - AGP Version 7.4.0
 - Gradle Version 7.5
 
+## Demo
+[Download APK](/demo/app-debug.apk)
 
 ### Contact Person
 👨 : Muhammad Naufal Fadhillah
